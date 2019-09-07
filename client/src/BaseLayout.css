@@ -1,0 +1,6 @@
+Menu {   
+    display: flex;
+    flex-direction: row;
+    background-color: mediumaquamarine;
+    width: 100%;
+  }
