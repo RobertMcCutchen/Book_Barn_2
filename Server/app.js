@@ -17,7 +17,7 @@ app.get('/books',(req,res) => {
 app.post('/add-book',(req,res) => {
     let title = req.body.title
     let genre = req.body.genre
-    let publisher = req.body.publisher
+    let author = req.body.author
     let year = req.body.year
     let imageURL = req.body.imageURL
     
@@ -25,7 +25,7 @@ app.post('/add-book',(req,res) => {
     let book = models.Book.build({
         title: title,
         genre: genre,
-        publisher: publisher,
+        author: author,
         year: year,
         imageURL: imageURL,    
     })
@@ -40,15 +40,15 @@ app.post('/add-book',(req,res) => {
 app.post('/update-book',(req,res) => {
     let title = req.body.title
     let genre = req.body.genre
-    let publisher = req.body.publisher
+    let author = req.body.author
     let year = req.body.year
     let imageURL = req.body.imageURL
     let bookId = parseInt(req.body.bookId) 
 
-    models.Trip.update({
+    models.Book.update({
         title: title,
         genre: genre,
-        publisher: publisher,
+        author: author,
         year: year,
         imageURL: imageURL,  
     },{

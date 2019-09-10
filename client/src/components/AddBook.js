@@ -7,9 +7,10 @@ export class AddBook extends Component {
         this.state = {
             title: '',
             genre: '',
-            publisher: '',
+            author: '',
             year: '',
-            imageURL: ''
+            imageURL: '',
+            publisher: '',
         };
     }
 
@@ -32,9 +33,10 @@ export class AddBook extends Component {
             body: JSON.stringify({
                 title: this.state.title,
                 genre: this.state.genre,
-                publisher: this.state.publisher,
+                author: this.state.author,
                 year: this.state.year,
-                imageURL: this.state.imageURL
+                imageURL: this.state.imageURL,
+                publisher: this.state.publisher,
             })
         })
         .then(response => response.json())
@@ -54,7 +56,7 @@ export class AddBook extends Component {
             <div className="addBookForm">
                 <input type="text" name="title" placeholder="Enter title" onChange={this.handleChange}/>
                 <input type="text" name="genre" placeholder="Enter genre" onChange={this.handleChange}/>
-                <input type="text" name="publisher" placeholder="Enter publisher" onChange={this.handleChange}/>
+                <input type="text" name="author" placeholder="Enter author" onChange={this.handleChange}/>
                 <input type="text" name="year" placeholder="Enter year" onChange={this.handleChange}/>
                 <input type="text"  name="imageURL" placeholder="Enter image URL" onChange={this.handleChange}/>
                 <button onClick={this.handleSubmit} type="submit">Add Book!</button>
