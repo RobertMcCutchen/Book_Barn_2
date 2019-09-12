@@ -7,9 +7,9 @@ export class Menu extends Component {
     render() {
         return <header>
                     <ul>
-                        <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="/books">View Books</NavLink></li>
-                        <li><NavLink to="/add-book">Add Books</NavLink></li>
+                        <li><NavLink to="/" style={{color: 'white', textDecoration: 'none'}}>Home</NavLink></li>
+                        <li><NavLink to="/books" style={{color: 'white', textDecoration: 'none'}}>View Books</NavLink></li>
+                        <li><NavLink to="/add-book" style={{color: 'white', textDecoration: 'none'}}>Add Books</NavLink></li>
                     </ul>
                 </header>
     }
@@ -17,7 +17,7 @@ export class Menu extends Component {
 
 export class Footer extends Component {
     render() {
-        return <footer>Book Barn&copy; Robert McCutchen, 2019</footer>
+        return <footer style={{color: 'white'}}>Book Barn&copy; Robert McCutchen, 2019</footer>
     }
 }
 

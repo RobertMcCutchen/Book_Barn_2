@@ -8,7 +8,7 @@ export class Home extends Component {
         return(
             <div className="homeDiv">
                 <img src={photo} alt="books" />
-                <p className="homeTitle">Book Barn</p>
+                <span className="homeTitle"><p>Book Barn</p></span>
             </div>
         )
     }

@@ -17,13 +17,14 @@ ul {
   flex-direction: row;
   justify-content: flex-start;
   list-style-type: none;
-  font-style: none;
+  text-decoration: none;
   color: black;
 }
 
 li {
   margin: 10px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .children {
