@@ -7,9 +7,10 @@ export class Menu extends Component {
     render() {
         return <header>
                     <ul>
-                        <li><NavLink to="/" style={{color: 'white', textDecoration: 'none'}}>Home</NavLink></li>
-                        <li><NavLink to="/books" style={{color: 'white', textDecoration: 'none'}}>View Books</NavLink></li>
-                        <li><NavLink to="/add-book" style={{color: 'white', textDecoration: 'none'}}>Add Books</NavLink></li>
+                        <li><NavLink to="/" style={{color: 'white', textDecoration: 'none'}}>Login</NavLink></li>
+                        <li><NavLink to="/api/home" style={{color: 'white', textDecoration: 'none'}}>Home</NavLink></li>
+                        <li><NavLink to="/api/books" style={{color: 'white', textDecoration: 'none'}}>View Books</NavLink></li>
+                        <li><NavLink to="/api/add-book" style={{color: 'white', textDecoration: 'none'}}>Add Books</NavLink></li>
                     </ul>
                 </header>
     }

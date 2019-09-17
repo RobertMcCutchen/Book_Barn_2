@@ -5,7 +5,7 @@ body {
 }
 
 header {
-  background-color: mediumaquamarine;
+  background: linear-gradient(45deg, #1abc9c, #2e8775);
   width: 100%;
   top: 0%;
   position: fixed;
@@ -44,36 +44,39 @@ li {
 .addBookForm {
   display: flex;
   flex-direction: column;
-  background-color: mediumaquamarine;
+  background: linear-gradient(45deg, #1abc9c, #2e8775);
   width: 30%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20%;
+  margin-top: 15%;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 2px;
 }
 
 .addBookForm input[type=text] {
   margin: 10px;
   border-radius: 2px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding-left: 5px;
 }
 
 .addBookForm button {
   margin: 10px;
   border-radius: 5px;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   cursor: pointer;
 }
 
 .bookListItem {
   display: flex;
   flex-direction: column;
-  background-color: mediumaquamarine;
+  background: linear-gradient(45deg, #1abc9c, #2e8775);
   width: auto;
   margin: 10px;
   max-width: 200px;
   align-items: center;
   border-radius: 2px;
+  box-shadow: 5px 5px 5px black;
 }
 
 .bookListItem img{
@@ -89,7 +92,7 @@ li {
 footer {
   position: fixed;
   bottom: 0%;
-  background-color: mediumaquamarine;
+  background: linear-gradient(45deg, #1abc9c, #2e8775);
   width: 100%;
   font-size: 1rem;
   text-align: center;

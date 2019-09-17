@@ -1,0 +1,28 @@
+.loginBox {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg, #1abc9c, #16a085);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30vh;
+    width: 40vw;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 2px;
+}
+
+.loginBox input {
+    font-size: 2rem;
+    margin: 10px;
+    border: 0;
+    padding-left: 10px;
+}
+
+.loginBox button {
+    margin: 10px;
+    font-size: 3rem;
+    border-radius: 5px;
+}
+
+.loginBox button:hover {
+    cursor: pointer;
+}

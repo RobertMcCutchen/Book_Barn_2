@@ -3,13 +3,40 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const models = require('./models')
+var jwt = require('jsonwebtoken')
 
 //Then, I set up my middleware.
 app.use(cors())
 app.use(express.json())
 
+//Middleware implementation
+app.all('/api/*', (re, res, next) => {
+    //middleware
+    console.log('middleware called...')
+    let headers = req.headers['authorization']
+    
+    if(headers) {
+        const token = headers.split(' ')[1]
+        var decoded = jwt.verify(token, 'someprivatekey');
+        if(decoded) {
+            const username = decoded.username
+            //Check in the database if the user exists
+            const persistedUser = users.find(u => u.username == username)
+            if(persistedUser) {
+                next()
+            } else {
+                res.json({error: 'Invalid credentials'})
+            }
+        } else {
+            res.json({error: 'Unauthorised access'})
+        }
+    } else {
+        res.json({error: 'Unauthorised access'})
+    }
+})
+
 //Get all books
-app.get('/books',(req,res) => {
+app.get('/api/books',(req,res) => {
     models.Book.findAll().then(books => res.json(books))
 })
 
@@ -73,6 +100,39 @@ console.log(id)
         }
     }).then(deletedBook => res.json(deletedBook))
 
+})
+
+//Login
+app.post('/login', (req,res) => {
+    const username = req.body.username
+    const password = req.body.password
+
+    let persistedUser = user.find(user => user.username == username && user.password == password)
+
+    if(persistedUser) {
+        var token = jwt.sign({username: username}, 'someprivatekey')
+        res.json({token: token})
+    } else {
+        //Credentials are not valid
+        res.status(401).json({error: 'Invalid credentials'})
+    }
+})
+
+//Register
+app.post('/register', (req,res) => {
+    let username = req.body.username
+    let password = req.body.password
+    console.log(username)
+    console.log(password)
+    //Create the user instance 
+    let user = models.User.build({
+        username: username,
+        password: password,  
+    })
+
+    // save the trip instance/object to the database 
+    user.save().then(savedUser => res.json(savedUser))
+    .catch(error => console.log(error))    
 })
 
 app.listen(3001, () => {

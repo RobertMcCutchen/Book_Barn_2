@@ -63,8 +63,9 @@ export class BookList extends Component {
                 <img src={book.imageURL} alt={book.title}/>
                 <h2>{book.title}</h2>
                 <span>Genre: {book.genre}</span>
-                <span>Publisher: {book.publisher}</span>
+                <span>Author: {book.author}</span>
                 <span>Year: {book.year}</span>
+                <button data-id={book.id} onClick={this.updateBook}>Update</button>
                 <button data-id={book.id} onClick={this.deleteBook}>Delete</button>
             </div>
         )
