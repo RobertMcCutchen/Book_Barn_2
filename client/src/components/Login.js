@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import {setAuthenticationHeader} from '../utils/authenticate'
+import {NavLink} from 'react-router-dom'
 import './Login.css'
 
 function Login() {
@@ -28,10 +29,15 @@ function Login() {
     }
 
     return (
+        <div className="loginContainer">
         <div className="loginBox">
             <input type="text" name="username" onChange={(e) => handleTextChange(e)} placeholder="Enter username"/>
             <input type="password" name="password" onChange={(e) => handleTextChange(e)} placeholder="Enter password"/>
             <button onClick={() => handleLogin()}>Login</button>
+            <div style={{width: '100%', textAlign: 'center', marginBottom: '5px'}}>
+                <span style={{color: 'white', textDecoration: 'none'}}>Not yet Registered? <NavLink to="/register" style={{color: 'white', textDecoration: 'none', pointer: 'cursor'}}>Click here!</NavLink></span>
+            </div>
+        </div>
         </div>
     )
 }

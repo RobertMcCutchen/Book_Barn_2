@@ -36,7 +36,7 @@ app.all('/api/*', (re, res, next) => {
 })
 
 //Get all books
-app.get('/api/books',(req,res) => {
+app.get('/books',(req,res) => {
     models.Book.findAll().then(books => res.json(books))
 })
 
@@ -135,6 +135,6 @@ app.post('/register', (req,res) => {
     .catch(error => console.log(error))    
 })
 
-app.listen(3001, () => {
+app.listen(3012, () => {
     console.log('Server is running...')
 })

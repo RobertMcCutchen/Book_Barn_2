@@ -20,7 +20,7 @@ export class BookList extends Component {
         }
     }
     getBooks() {
-        fetch("http://localhost:3001/books")
+        fetch("http://localhost:3012/books")
             .then(promise => promise.json())
             .then(json => {
                 this.setState({
@@ -35,7 +35,7 @@ export class BookList extends Component {
     }
 
     deleteBook = (e) => {
-        fetch("http://localhost:3001/delete-book", {
+        fetch("http://localhost:3012/delete-book", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
